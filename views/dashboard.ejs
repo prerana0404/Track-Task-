@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/style.css">
+<h1>Welcome <%= user.name %>!</h1>
+<h2>Your Projects</h2>
+
+<ul>
+  <% projects.forEach(project => { %>
+    <li><a href="/projects/<%= project._id %>"><%= project.title %></a></li>
+  <% }) %>
+</ul>
+
+<form method="POST" action="/projects/create">
+  <input name="title" placeholder="New Project Title" required />
+  <button type="submit">Add Project</button><br><br>
+  <a href="/logout">Logout</a>
+</form>
+
+
+
